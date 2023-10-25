@@ -39,16 +39,23 @@ body {
   }
 
   .form-input {
+    font-size: 16px;
     margin-bottom: 30px;
     background-color: #dfd7f0;
     width: 250px;
-    height: 42px;
+    height: 62px;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 15px;
+    color: #ada5be;
+    font-style: italic;
+    text-align: center;
+    font-weight: 600;
+    
   }
 
-  .form-input::placeholder{
+  .form-input::placeholder,
+  .form-input:focus {
     font-style: italic;
     text-align: center;
     color: #ada5be;
@@ -60,10 +67,10 @@ body {
     color: white;
     padding: 10px 15px;
     border: none;
-    border-radius: 25px;
+    border-radius: 50px;
     cursor: pointer;
     width: 250px;
-    height: 42px;
+    height: 62px;
     font-style: italic;
     text-align: center;
     font-weight: 600;
