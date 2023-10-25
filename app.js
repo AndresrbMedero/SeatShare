@@ -24,8 +24,6 @@ app.get('/register', (req, res) => {
   res.sendFile('public/register.html', { root: __dirname });
 });
 
-
-
 app.use(express.static('public'));
 
 // Ruta para registrar un nuevo usuario

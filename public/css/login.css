@@ -15,10 +15,10 @@ body {
     width: 360px;
     height: 700px;
     text-align: center;
-    display: flex; /* Usar display flex */
-    flex-direction: column; /* Colocar los elementos uno encima del otro */
-    justify-content: center; /* Centrar verticalmente */
-    align-items: center; /* Centrar horizontalmente */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
     margin: 30px;
   }
   
@@ -91,7 +91,7 @@ body {
     border-radius: 15px;
     display: flex;
     justify-content: space-around;
-    background-color: #d1c4e9; /* Color de fondo de la barra de navegación */
+    background-color: #d1c4e9; 
   }
   
   .nav-link {
@@ -100,16 +100,16 @@ body {
     height: 100%;
     width: 50% ;
     text-decoration: none;
-    color: #8D44AC; /* Color de texto predeterminado para los enlaces */
-    display: flex; /* Usar display flex */
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
-    line-height: 51px; /* Igualar a la altura de .nav-link */
+    color: #8D44AC;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    line-height: 51px; 
   }
   
   .nav-link.active {
-    background-color: #a271e1; /* Color de fondo del enlace activo */
-    color: #D1C4E9; /* Color de texto del enlace activo */
-    height: 100%; /* Establecer la altura al 100% */
+    background-color: #a271e1;
+    color: #D1C4E9;
+    height: 100%;
   }
   
