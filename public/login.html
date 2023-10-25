@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" href="./css/login.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  
+
+  <div class="card">
+    <div class="nav-bar">
+      <a class="nav-link active" href="javascript:void(0)" id="inicio-link">Inicio</a>
+      <a class="nav-link" href="javascript:void(0)" id="registro-link">Registro</a>
+    </div>
+
+    <div id="login-form">
+      <img src="./img/usuario.png" alt="" width="140" height="140">
+      <form action="/login" method="POST">
+        <input type="text" id="username" name="username" class="form-input" required placeholder="NOMBRE DE USUARIO">
+        <input type="password" id="password" name "password" class="form-input" required placeholder="CONTRASEÑA">
+        <button type="submit" class="form-button">Iniciar Sesión</button>
+      </form>
+    </div>
+
+    <div id="register-form" style="display: none;">
+      <img src="./img/usuario.png" alt="" width="140" height="140">
+      <form action="/register" method="POST">
+        <input type="text" id="register-username" name="register-username" class="form-input" required placeholder="NOMBRE DE USUARIO">
+        <input type="password" id="register-password" name="register-password" class="form-input" required placeholder="CONTRASEÑA">
+        <button type="submit" class="form-button">Registrar</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript para cambiar entre el formulario de inicio de sesión y el formulario de registro
+    const inicioLink = document.getElementById('inicio-link');
+    const registroLink = document.getElementById('registro-link');
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+
+    inicioLink.addEventListener('click', () => {
+      loginForm.style.display = 'block';
+      registerForm.style.display = 'none';
+      inicioLink.classList.add('active');
+      registroLink.classList.remove('active');
+    });
+
+    registroLink.addEventListener('click', () => {
+      loginForm.style.display = 'none';
+      registerForm.style.display = 'block';
+      registroLink.classList.add('active');
+      inicioLink.classList.remove('active');
+    });
+  </script>
+</body>
+</html>
