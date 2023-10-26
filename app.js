@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 const app = express();
-const User = require('./models/User.js')
+const User = require('./public/models/User.js')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -29,12 +29,13 @@ mongoose.connect(mongo_uri)
   
     user.save()
       .then(() => {
-        res.status(200).send('Usuario registrado');
+        res.redirect('/index.html'); // Redirect after successfully registering the user
       })
       .catch((err) => {
-        res.status(500).send('Error al registrar usuario: ' + err.message);
+        res.status(500).json({ message: 'Error al registrar usuario: ' + err.message });
       });
   });
+  
   
 
   app.post('/authenticate', (req, res) => {
@@ -52,7 +53,7 @@ mongoose.connect(mongo_uri)
           }
   
           if (result) {
-            res.status(200).send('Usuario autenticado');
+            res.redirect('/home.html');
           } else {
             res.status(500).send('Usuario y/o contraseña incorrecta');
           }
