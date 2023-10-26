@@ -1,60 +1,69 @@
 const express = require('express');
+const path = require('path');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 const app = express();
-
-mongoose.connect('mongodb://localhost/seatshare', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
-const User = mongoose.model('User', {
-  username: String,
-  password: String,
-});
+const User = require('./models/User.js')
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/', (req, res) => {
-  res.sendFile('public/login.html', { root: __dirname });
-});
+app.use(express.static(path.join(__dirname, 'public')));
 
+// Connect to the MongoDB database
+const mongo_uri = 'mongodb://localhost/seatshare';
 
-app.use(express.static('public'));
-
-// Ruta para registrar un nuevo usuario
-app.post('/register', async (req, res) => {
-  const { username, password } = req.body;
-  const hashedPassword = bcrypt.hashSync(password, 10);
-
-  const user = new User({
-    username,
-    password: hashedPassword,
+mongoose.connect(mongo_uri)
+  .then(() => {
+    console.log(`Connected to ${mongo_uri}`);
+  })
+  .catch((err) => {
+    console.error('Error connecting to MongoDB:', err);
   });
 
-  try {
-    const savedUser = await user.save();
-    res.status(201).json(savedUser);
-  } catch (error) {
-    res.status(400).json({ error: 'Error al registrar el usuario' });
-  }
-});
+  app.post('/register', (req, res) => {
+    const { username, password } = req.body;
+  
+    const user = new User({ username, password });
+  
+    user.save()
+      .then(() => {
+        res.status(200).send('Usuario registrado');
+      })
+      .catch((err) => {
+        res.status(500).send('Error al registrar usuario: ' + err.message);
+      });
+  });
+  
 
-// Ruta para iniciar sesión
-app.post('/login', async (req, res) => {
-  const { username, password } = req.body;
-  const user = await User.findOne({ username });
+  app.post('/authenticate', (req, res) => {
+    const { username, password } = req.body;
+  
+    User.findOne({ username })
+      .then((user) => {
+        if (!user) {
+          return res.status(500).send('El usuario no existe');
+        }
+  
+        user.isCorrectPassword(password, (err, result) => {
+          if (err) {
+            return res.status(500).send('Error al autenticar: ' + err.message);
+          }
+  
+          if (result) {
+            res.status(200).send('Usuario autenticado');
+          } else {
+            res.status(500).send('Usuario y/o contraseña incorrecta');
+          }
+        });
+      })
+      .catch((err) => {
+        res.status(500).send('Error al autenticar: ' + err.message);
+      });
+  });
+  
 
-  if (user && bcrypt.compareSync(password, user.password)) {
-    res.status(200).json({ message: 'Inicio de sesión exitoso' });
-  } else {
-    res.status(401).json({ error: 'Credenciales incorrectas' });
-  }
-});
-
-const port = process.env.PORT || 3000;
-
-app.listen(port, () => {
-  console.log(`Servidor en ejecución en el puerto ${port}`);
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
 });
