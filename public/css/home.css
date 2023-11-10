@@ -115,7 +115,7 @@ legend {
   }
   
   .notifications {
-    margin-left: auto; /* Mueve las notificaciones al lado derecho */
+    margin-left: auto; 
     display: flex;
     align-items: center;
   }
