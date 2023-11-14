@@ -74,7 +74,6 @@ passport.deserializeUser(function (id, done) {
 });
 
 // Ruta para el registro de usuarios
-// Ruta para el registro de usuarios
 app.post('/register', (req, res) => {
   const { username, password } = req.body;
 
@@ -137,6 +136,8 @@ app.post('/authenticate', (req, res, next) => {
           console.error('Error al iniciar sesión:', loginErr);
           return next(loginErr);
         }
+
+        // Redirige al usuario a la página de inicio en lugar de la página de inicio de sesión
         return res.redirect('/home');
       });
     } else {
@@ -146,7 +147,6 @@ app.post('/authenticate', (req, res, next) => {
     }
   })(req, res, next);
 });
-
 
 
 // Ruta para la página de inicio
@@ -160,6 +160,19 @@ app.get('/home', (req, res) => {
     res.redirect('/index.html');
   }
 });
+
+app.get('/asientos.html', (req, res) => {
+  // Verifica si el usuario está autenticado
+  if (req.isAuthenticated()) {
+    res.render(path.join(__dirname, 'public', 'asientos.html'));
+  } else {
+    // Redirige al usuario a la página de inicio de sesión si no está autenticado
+    res.redirect('/index.html');
+  }
+});
+
+
+
 
 app.listen(3000, () => {
   console.log('Servidor corriendo en el puerto 3000');
