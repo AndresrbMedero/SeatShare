@@ -5,9 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/asientos.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="card"></div>
+    <div class="card">
+        <div class="head">
+            <h3>ASIENTOS</h3>
+            <span></span>
+          </div>
+          <div class="number">
+            <div class="a" id="uno">1</div>
+            <div class="a" id="dos">2</div>
+            <div class="a" id="tres">3</div>
+          </div>
+          <div class="cars">
+            <img src="./img/car2.png" alt="" class="car" id="unos">
+           <img src="./img/car.png" alt="" class="car" id="dos">
+            <img src="./img/car2.png" alt="" class="car" id="tress">
+          </div>
+          <div class="time">
+            <div><div><img src="./img/active.png" alt=""><span id="t1">7:00 PM</span></div></div>
+            <div><img src="./img/active.png" alt=""><span id="t1">7:15 PM</span></div>
+            <div><img src="./img/active.png" alt=""><span id="t3">7:15 PM</span></div>
+          </div>
+
+          <div class="lugar1">
+            <div class="cont">
+                <div class="cont1"><img src="./img/x.png" alt="" class="status"></div>
+                <div class="cont2"><img src="./img/asiento.png" alt="" id="t1" class="asient" onclick="seleccionarAsiento(this)"></div>
+                <div class="cont3">Asiento 1</div>
+            </div>
+            <div class="cont">
+                <div class="cont1"><img src="./img/x.png" alt="" class="status"></div>
+                <div class="cont2"><img src="./img/asiento.png" alt="" id="t1" class="asient" onclick="seleccionarAsiento(this)"></div>
+                <div class="cont3">Asiento 2</div>
+            </div>
+            <div class="cont">
+                <div class="cont1"><img src="./img/ok.png" alt="" class="status"></div>
+                <div class="cont2"><img src="./img/asiento.png" alt="" id="t1" class="asient" onclick="seleccionarAsiento(this)"></div>
+                <div class="cont3">Asiento 3</div>
+            </div>
+          </div>
+          <div class="lugar1">
+            <div class="cont">
+                <div class="cont1"><img src="./img/ok.png" alt="" class="status"></div>
+                <div class="cont2"><img src="./img/asiento.png" alt="" id="t1" class="asient"  onclick="seleccionarAsiento(this)"></div>
+                <div class="cont3">Asiento 4</div>
+            </div>
+            <div class="cont">
+                <div class="cont1"><img src="./img/x.png" alt="" class="status"></div>
+                <div class="cont2"><img src="./img/conductor.png" alt="" id="t1" class="asient" onclick="seleccionarAsiento(this)" ></div>
+                <div class="cont3">Conductor</div>
+            </div>
+          </div>
+          <div class="next"><a href="./viaje.html"><img src="./img/next2.png" alt=""></a></div>
+    </div>
+    <script>
+        function seleccionarAsiento(asiento) {
+          // Elimina el borde de todos los asientos
+          var todosAsientos = document.querySelectorAll('.asient');
+          todosAsientos.forEach(function (elemento) {
+            elemento.style.border = 'none';
+          });
+      
+          // Aplica el borde al asiento seleccionado
+          asiento.style.border = '2px solid #9B59B6';
+          asiento.style.borderRadius = '10px';
+        }
+      </script>
+      
 </body>
 </html>

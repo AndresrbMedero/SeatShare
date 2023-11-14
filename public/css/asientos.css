@@ -1,0 +1,158 @@
+.card {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.head {
+    display: inline-block;
+    margin-bottom: 60px;
+  }
+  .head h3 {
+    display: inline-block;
+  }
+  
+  .head span {
+    display: block;
+    border-bottom: .5px solid rgba(142, 68, 173, 33); /* Establece el grosor, el estilo y el color de la línea */
+    width: 214px; /* Establece la longitud de la línea en 150px (ajusta según sea necesario) */
+  }
+  
+   h3 {
+    display: inline-block;
+    color: #9B59B6;
+  }
+  
+  .number {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  span {
+    font-weight: 800;
+  }
+
+.a {
+  display: inline-block;
+  width: 39px;
+  height: 39px;
+  background-color: #673AB7;
+  border-radius: 25px;
+  color: white;
+  font-size: 35px;
+
+}
+
+.cars{
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.car{
+  width: 58px;
+  height: 60px;
+}
+
+#uno {
+  margin-right: 80px;
+}
+
+#tres {
+  margin-left: 80px;
+}
+#unos {
+  margin-right: 50px;
+}
+
+#tress {
+  margin-left: 50px;
+}
+
+.time div {
+  display: inline-block;
+}
+
+.time div img {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+#t1{
+  margin-right: 50px;
+}
+
+.asient{
+  width: 70px;
+  height: 90px;
+}
+
+.lugar1{
+  display: flex;
+  margin: 20px;
+  
+}
+
+.lugar1 div {
+  display: inline-block;
+}
+
+.asient{
+  width: 70px;
+  height: 90px;
+}
+
+
+
+#tt{
+  margin-right: 100px;
+}
+
+.status {
+  width: 25px;
+  height: 25px;
+}
+
+.f div {
+  display: flex;
+}
+
+
+
+ .cont {
+      position: relative;
+      margin: -5px;
+      margin-bottom: 50px;
+      height: 100px;
+    }
+
+    .cont1 {
+      width: 150px;
+      height: 100px;
+    }
+
+    .cont2 {
+      position: absolute;
+      top: 40px; /* Ajusta la posición vertical según sea necesario */
+      left: 40px; /* Ajusta la posición horizontal según sea necesario */
+      
+    }
+
+    .cont3{
+      position: absolute;
+      top: 130px;
+      left: 40px;
+      font-weight:800;
+    }
+
+    .next img{
+      width: 38px;
+      height: 40px;
+  
+    }
+
+    .next {
+      position: absolute;
+      bottom: 10px; /* Ajusta según tus necesidades */
+      right: 10px; /* Ajusta según tus necesidades */
+    }
+    

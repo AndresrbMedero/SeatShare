@@ -149,11 +149,18 @@ legend {
   height: 45%;
 }
 
-.historial h3 {
-  text-decoration-line: underline; /* Establece el tipo de decoración como subrayado */
-  text-decoration-color: #8E44AD; /* Establece el color de la línea, en este caso rojo (#FF0000) */
-  text-decoration-skip: none; /* Permite que la línea subraye todo, incluyendo espacios entre letras */
-  text-decoration-thickness: 1px; /* Cambia el ancho de la línea a 2 píxeles */
+.uno {
+  display: inline-block;
+}
+
+.uno h3 {
+  display: inline-block;
+  padding-right: 20px; /* Ajusta el espacio entre el texto y la línea */
+}
+
+.uno span {
+  border-bottom: 0.5px solid rgba(142, 68, 173, 33); /* Establece el grosor, el estilo y el color de la línea */
+  width: 214px; /* Establece la longitud de la línea en 150px (ajusta según sea necesario) */
 }
 
 .via {
@@ -228,6 +235,7 @@ legend {
 
 
 .hist {
+  justify-content: center;
   display: flex;
   padding-top: 15px;
 }
