@@ -125,6 +125,10 @@
       height: 100px;
     }
 
+    .asient:hover {
+      cursor: pointer;
+    }
+
     .cont1 {
       width: 150px;
       height: 100px;

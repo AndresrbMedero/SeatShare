@@ -1,0 +1,56 @@
+*{
+    margin-bottom: 10px;
+}
+
+.head {
+    display: inline-block;
+  }
+  .head h3 {
+    display: inline-block;
+    font-size: 20px;
+    color: #9B59B6;
+  }
+  
+  .head span {
+    display: block;
+    border-bottom: .5px solid rgba(142, 68, 173, 33); /* Establece el grosor, el estilo y el color de la línea */
+    width: 214px; /* Establece la longitud de la línea en 150px (ajusta según sea necesario) */
+  }
+
+  .name {
+    display: inline-block;
+    font-size: 20px;
+    color: #9B59B6;
+  }
+
+  .user {
+    width: 220px;
+    height: 220px;
+  }
+
+  .star {
+    width: 292px;
+    height: 60px;
+  }
+
+  .comentarios {
+    display: flex;
+  }
+
+  .cont{
+    display: block;
+  }
+
+  textarea {
+    width: 285px;
+    height: 91px;
+    resize: none;
+    border:1px solid #9B59B6;
+    border-radius: 20px;
+  }
+
+  .send {
+    margin-top: 20%;
+    width: 60px;
+    height: 70px;
+  }

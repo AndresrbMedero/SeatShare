@@ -1,0 +1,55 @@
+.card {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+.head {
+    display: inline-block;
+  }
+  .head h3 {
+    display: inline-block;
+    font-size: 25px;
+    color: #9B59B6;
+  }
+  
+  .head span {
+    display: block;
+    border-bottom: .5px solid rgba(142, 68, 173, 33); /* Establece el grosor, el estilo y el color de la línea */
+    width: 214px; /* Establece la longitud de la línea en 150px (ajusta según sea necesario) */
+  }
+
+.img {
+    width: 100%;
+}
+
+  img {
+    width: 281px;
+    height: 281px;
+  }
+
+  .info {
+    border: solid 1px #9B59B6;
+    width: 273px;
+    height: 256px;
+    border-radius: 20px;
+  }
+
+  .next img{
+    width: 38px;
+    height: 40px;
+
+  }
+
+  .next {
+    position: absolute;
+    bottom: 10px; /* Ajusta según tus necesidades */
+    right: 10px; /* Ajusta según tus necesidades */
+  }
+
+  .inf {
+    margin: 28px;
+    display: block;
+    font-size: 15px;
+    color: #9B59B6;
+    font-weight:800;
+  }
